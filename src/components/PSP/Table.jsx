@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from '@emotion/styled';
+import moment from 'moment';
 
 const ContainerTableEmpty = styled.div`
     margin-top: 80px;
@@ -72,7 +73,7 @@ const Tabla = ({dataRequest}) => {
                             Fecha
                         </div>
                     </Header>
-                    {dataRequest.map((data) => {
+                    {dataRequest.sort((a, b) => a.fecha - b.fecha).map((data) => {
                         return(
                             <Body>
                                 <div>
@@ -82,7 +83,7 @@ const Tabla = ({dataRequest}) => {
                                     {data.CantidadLlamada}
                                 </div>
                                 <div>
-                                    {data.fecha}
+                                    {moment(data.fecha).format("DD-MM-YYYY")}
                                 </div>
                             </Body>
                         )

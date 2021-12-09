@@ -26,7 +26,7 @@ const RenderData = ({facturaData}) => {
                     <Status bg={colorGB} color={colorFont}>{factura.estado}</Status>
                     <p>{amount}</p>
                     <p>{fecha}</p>
-                    <a href={factura.Foto} target="_blank">ver Factura</a>
+                    <a href={factura.Foto} target="_blank" rel="noreferrer">ver Factura</a>
                 </ConntFactura>
             )})}
         </div>
