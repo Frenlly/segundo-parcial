@@ -73,7 +73,7 @@ const Tabla = ({dataRequest}) => {
                             Fecha
                         </div>
                     </Header>
-                    {dataRequest.sort((a, b) => a.fecha - b.fecha).map((data) => {
+                    {dataRequest.sort((a, b) => moment(a.fecha) - moment(b.fecha)).map((data) => {
                         return(
                             <Body>
                                 <div>
